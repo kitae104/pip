@@ -13,7 +13,7 @@ import lombok.*;
 @Setter
 @ToString
 @Builder
-public class Member {
+public class Basic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
