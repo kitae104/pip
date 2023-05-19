@@ -1,9 +1,6 @@
 package kr.inhatc.pip.basic.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -16,6 +13,7 @@ import lombok.*;
 public class Basic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "basic_id")
     private Long id;
     private String name;
 }
