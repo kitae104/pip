@@ -16,4 +16,5 @@ public class Basic {
     @Column(name = "basic_id")
     private Long id;
     private String name;
+    private int age;
 }

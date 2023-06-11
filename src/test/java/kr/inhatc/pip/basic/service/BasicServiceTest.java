@@ -51,4 +51,17 @@ class BasicServiceTest {
     @Test
     void findOne() {
     }
+
+    @Test
+    public void findSameAge() {
+        Basic basic1 = Basic.builder().name("spring").age(10).build();
+        Basic basic2 = Basic.builder().name("spring2").age(10).build();
+        Basic basic3 = Basic.builder().name("spring3").age(20).build();
+
+        basicService.join(basic1);
+        basicService.join(basic2);
+        basicService.join(basic3);
+
+        assertThat(basicService.findSameAge(10).size()).isEqualTo(2);
+    }
 }

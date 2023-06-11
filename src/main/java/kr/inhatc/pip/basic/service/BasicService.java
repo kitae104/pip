@@ -26,6 +26,15 @@ public class BasicService {
         });
     }
 
+    // 나이가 동일한 사람들을 찾는다.
+    public List<Basic> findSameAge(int age) {
+        return basicRepository.findByAge(age);
+    }
+
+    public Optional<Basic> findByNameAge(String name, int age) {
+        return basicRepository.findByNameAndAge(name, age);
+    }
+
     public List<Basic> findBasic() {
         return basicRepository.findAll();
     }
