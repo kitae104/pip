@@ -13,12 +13,14 @@ public class Reply extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "reply_rno")
     private Long rno;
 
     private String text;
 
     private String replyer;
 
-    @ManyToOne                  // 다대일 관계
+    @ManyToOne(fetch = FetchType.LAZY)                   // 다대일 관계
+    @JoinColumn(name = "board_bno")
     private Board board;
 }

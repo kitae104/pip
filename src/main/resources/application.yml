@@ -42,7 +42,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
         show-sql: true   # 쿼리문 확인
@@ -75,5 +75,3 @@ logging:
         type:
           descriptor:
             sql: trace
-
-
