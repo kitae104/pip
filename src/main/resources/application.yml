@@ -9,7 +9,9 @@ server:
       enabled: true
       force: true
 
-
+#################################
+# Spring Setting
+#################################
 spring:
   banner:
     location: banner/banner.txt
@@ -54,8 +56,6 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
-
-
 
   ###############################
   # Security User
