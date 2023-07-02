@@ -3,6 +3,7 @@ package kr.inhatc.pip.board.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import kr.inhatc.pip.utils.entity.BaseEntity;
 import lombok.*;
 
 @Entity

@@ -1,6 +1,8 @@
 package kr.inhatc.pip.board.entity;
 
 import jakarta.persistence.*;
+
+import kr.inhatc.pip.utils.entity.BaseEntity;
 import lombok.*;
 
 @Entity
@@ -23,4 +25,13 @@ public class Board extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)                  // 다대일 관계
     @JoinColumn(name = "member_email")
     private Member writer;
+
+    // 가능하면 setter를 만들지 않는 것이 좋다.
+    public void changeTitle(String title){
+        this.title = title;
+    }
+
+    public void changeContent(String content){
+        this.content = content;
+    }
 }

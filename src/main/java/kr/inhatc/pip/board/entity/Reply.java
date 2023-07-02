@@ -1,6 +1,7 @@
 package kr.inhatc.pip.board.entity;
 
 import jakarta.persistence.*;
+import kr.inhatc.pip.utils.entity.BaseEntity;
 import lombok.*;
 
 @Entity
@@ -9,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @ToString(exclude = "board")               // exclude = "board" : board를 제외하고 출력
-public class Reply extends BaseEntity{
+public class Reply extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

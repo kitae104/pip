@@ -2,6 +2,7 @@ package kr.inhatc.pip.board.repository;
 
 import kr.inhatc.pip.board.entity.Board;
 import kr.inhatc.pip.board.entity.Member;
+import kr.inhatc.pip.board.service.BoardService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -82,4 +83,5 @@ class BoardRepositoryTest {
         Object[] arr = (Object[]) result;
         System.out.println(Arrays.toString(arr));
     }
+
 }
