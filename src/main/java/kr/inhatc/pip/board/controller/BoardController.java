@@ -43,4 +43,19 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    @GetMapping({"/read", "/modify"})
+    public void read(@ModelAttribute("requestDTO") PageRequestDTO pageRequestDTO, Long bno, Model model) {
+        log.info("bno: " + bno);
+        BoardDTO boardDTO = boardService.get(bno);
+        log.info("dto: " + boardDTO);
+        model.addAttribute("dto", boardDTO);
+    }
+
+    @PostMapping("/remove")
+    public String remove(long bno, RedirectAttributes redirectAttributes) {
+        log.info("bno: " + bno);
+        boardService.removeWithReplies(bno);
+        redirectAttributes.addFlashAttribute("msg", bno);
+        return "redirect:/board/list";
+    }
 }

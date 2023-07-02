@@ -43,6 +43,7 @@ public class BasicController {
     public String createForm() {
         return "basic/createForm";
     }
+
     @PostMapping("/basic/new")
     public String create(BasicFormDto basicDto) {
         Basic basic = Basic.builder().name(basicDto.getName()).build();
