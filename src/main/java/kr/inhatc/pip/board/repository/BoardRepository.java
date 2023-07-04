@@ -1,6 +1,7 @@
 package kr.inhatc.pip.board.repository;
 
 import kr.inhatc.pip.board.entity.Board;
+import kr.inhatc.pip.board.repository.search.SearchBoardRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface BoardRepository extends JpaRepository<Board, Long> {
+public interface BoardRepository extends JpaRepository<Board, Long>, SearchBoardRepository {
 
     // 목록 화면에서 게시글의 정보와 함께 작성자를 같이 가져오기
     // left join을 이용하여 Board와 Member를 가져옴

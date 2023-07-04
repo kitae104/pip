@@ -3,6 +3,7 @@ package kr.inhatc.pip.board.repository;
 import kr.inhatc.pip.board.entity.Board;
 import kr.inhatc.pip.board.entity.Member;
 import kr.inhatc.pip.board.service.BoardService;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -84,4 +85,9 @@ class BoardRepositoryTest {
         System.out.println(Arrays.toString(arr));
     }
 
+    @Test
+    @DisplayName("검색 테스트")
+    public void testSearch1(){
+        boardRepository.search1();
+    }
 }

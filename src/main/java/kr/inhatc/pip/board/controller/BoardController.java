@@ -51,6 +51,30 @@ public class BoardController {
         model.addAttribute("dto", boardDTO);
     }
 
+    @PostMapping("/modify")
+    public String modify(BoardDTO dto,
+                         @ModelAttribute("requestDTO") PageRequestDTO requestDTO,
+                         RedirectAttributes redirectAttributes){
+
+
+        log.info("post modify.........................................");
+        log.info("dto: " + dto);
+
+        boardService.modify(dto);                   // 수정된 게시글의 번호
+
+        // addFlashAttribute()는 일회성으로 데이터를 전달할 때 사용 - URL에 데이터가 노출되지 않음
+        // 반면에 addAttribute()는 URL에 데이터가 노출됨
+        redirectAttributes.addAttribute("page",requestDTO.getPage());           // 페이지 번호
+        redirectAttributes.addAttribute("type",requestDTO.getType());           // 검색 조건
+        redirectAttributes.addAttribute("keyword",requestDTO.getKeyword());     // 검색 키워드
+
+        redirectAttributes.addAttribute("bno",dto.getBno());
+
+        return "redirect:/board/read";
+
+    }
+
+
     @PostMapping("/remove")
     public String remove(long bno, RedirectAttributes redirectAttributes) {
         log.info("bno: " + bno);
