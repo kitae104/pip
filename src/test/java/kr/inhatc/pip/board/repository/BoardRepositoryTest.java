@@ -90,4 +90,15 @@ class BoardRepositoryTest {
     public void testSearch1(){
         boardRepository.search1();
     }
+
+    @Test
+    @DisplayName("검색 페이징 테스트")
+    public void testSearchPage(){
+        Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
+        Page<Object[]> result = boardRepository.searchPage("t","1", pageable);
+//        result.get().forEach(row -> {
+//            Object[] arr = (Object[])row;
+//            System.out.println(Arrays.toString(arr));
+//        });
+    }
 }
